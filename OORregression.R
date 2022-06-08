@@ -4,38 +4,38 @@ library(caret)
 library(dplyr)
 library(car)
 
-anar=read.csv("totalANAR.csv")
-dt=subset(anar,select = c(regionN,Dvrregion,IndicatN,
-                        Total.Point.estimate,Children.without.functional.difficulties.Point.estimate,
-                        Children.with.functional.difficulties.Point.estimate,Time.period))
-corPlot(cor(dt))
-pairs(cor(dt))
+oor=read.csv("totalOOR.csv")
+dt1=subset(oor,select = c(regionN,Dvrregion,IndicatN,
+                          Total.Point.estimate,Children.without.functional.difficulties.Point.estimate,
+                          Children.with.functional.difficulties.Point.estimate,Time.period))
+corPlot(cor(dt1))
+pairs(cor(dt1))
 
 
-ggplot(dt, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Dvrregion))) +
+ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Dvrregion))) +
   stat_smooth(method = "lm",
               col = "#C42126", se = FALSE, size = 1
   )
-ggplot(dt, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(regionN))) +
+ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(regionN))) +
   stat_smooth(method = "lm",
               col = "#C42126", se = FALSE, size = 1
   )
-ggplot(dt, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(IndicatN))) +
+ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(IndicatN))) +
   stat_smooth(method = "lm",
               col = "#C42126", se = FALSE, size = 1
   )
-ggplot(dt, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Time.period))) +
+ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Time.period))) +
   stat_smooth(method = "lm",
               col = "#C42126", se = FALSE, size = 1
   )
 
-set.seed(4)
-model=lm(Children.with.functional.difficulties.Point.estimate~.,data = dt)
+set.seed(5)
+model=lm(Children.with.functional.difficulties.Point.estimate~.,data = dt1)
 
 summary(model)
 # Call:
 #   lm(formula = Children.with.functional.difficulties.Point.estimate ~ 
-#        ., data = dt)
+#        ., data = dt1)
 # 
 # Residuals:
 #   Min      1Q  Median      3Q     Max 
@@ -59,27 +59,27 @@ summary(model)
 
 plot(model,2)
 #require regression for tpe
-dt_tpe=subset(dt,select = -c(Children.without.functional.difficulties.Point.estimate,Children.with.functional.difficulties.Point.estimate))
-model_tpe=lm(Total.Point.estimate~.,data = dt_tpe)
+dt1_tpe=subset(dt1,select = -c(Children.without.functional.difficulties.Point.estimate,Children.with.functional.difficulties.Point.estimate))
+model_tpe=lm(Total.Point.estimate~.,data = dt1_tpe)
 summary(model_tpe)
 plot(model_tpe,2)
 
 #require regression for cwithout
-dt_cthout=subset(dt,select = -c(Total.Point.estimate,Children.with.functional.difficulties.Point.estimate))
-model_cthout=lm(Children.without.functional.difficulties.Point.estimate~.,data=dt_cthout)
+dt1_cthout=subset(dt1,select = -c(Total.Point.estimate,Children.with.functional.difficulties.Point.estimate))
+model_cthout=lm(Children.without.functional.difficulties.Point.estimate~.,data=dt1_cthout)
 summary(model_cthout)
 plot(model_cthout,2)
 
-#create prediction of ANAR
-hmph=subset(dt,select = c(Time.period,Children.with.functional.difficulties.Point.estimate))
+#create prediction of OOR
+hmph=subset(dt1,select = c(Time.period,Children.with.functional.difficulties.Point.estimate))
 a=colMeans(hmph[hmph$Time.period=='2017',])
 b=colMeans(hmph[hmph$Time.period=='2018',])
 c=colMeans(hmph[hmph$Time.period=='2019',])
 d=colMeans(hmph[hmph$Time.period=='2020',])
 
-yearPred=data.frame(
+yearPred1=data.frame(
   year=c(2017:2020),
-  anarDisabled=c(as.double(a[2]),as.double(b[2]),as.double(c[2]),as.double(d[2]))
+  oorDisabled=c(as.double(a[2]),as.double(b[2]),as.double(c[2]),as.double(d[2]))
 )
 i=0
 j=0
@@ -88,11 +88,11 @@ year=5
 
 for(j in 1:year){
   pred=0
-  for(i in 1:nrow(dt)) {
-
-    re=dt[i,]$regionN
-    dv=dt[i,]$Dvrregion
-    indi=dt[i,]$IndicatN
+  for(i in 1:nrow(dt1)) {
+    
+    re=dt1[i,]$regionN
+    dv=dt1[i,]$Dvrregion
+    indi=dt1[i,]$IndicatN
     
     #set year to predict
     t=2020+j
@@ -112,20 +112,20 @@ for(j in 1:year){
                        Children.without.functional.difficulties.Point.estimate=cthout,
                        Time.period = t, interval = "confidence")
     
-   pred=pred+as.double(predict(model,newdata))
+    pred=pred+as.double(predict(model,newdata))
   }
-    meanPred=pred/nrow(dt)
-    #create data frame
-    newPred=data.frame(
-      year=2020+j,
-      anarDisabled=meanPred
-    )
-    #insert to yearPred
-    yearPred[nrow(yearPred) + 1,]=newPred
+  meanPred=pred/nrow(dt1)
+  #create data frame
+  newPred=data.frame(
+    year=2020+j,
+    oorDisabled=meanPred
+  )
+  #insert to yearPred
+  yearPred1[nrow(yearPred1) + 1,]=newPred
 }
 
 
-plot(yearPred$year, yearPred$anarDisabled, col="red",type = "b", lty = 2, frame=FALSE)
-lines(yearPred[1:4,]$year, yearPred[1:4,]$anarDisabled, col="blue",type = "b", lty = 1)
+plot(yearPred1$year, yearPred1$oorDisabled, col="red",type = "b", lty = 2, frame=FALSE)
+lines(yearPred1[1:4,]$year, yearPred1[1:4,]$oorDisabled, col="blue",type = "b", lty = 1)
 legend("topleft", legend=c("Predicted", "Actual"),
        col=c("red", "blue"), lty = 2:1, cex=0.8)

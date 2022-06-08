@@ -1,0 +1,97 @@
+﻿id,Countries and areas,Region,regionN,Development regions,Dvrregion,indicator,IndicatN,Total Point estimate,Total Upper limit,Total Lower limit,Children without functional difficulties Point estimate,Children without functional difficulties Upper limit,Children without functional difficulties Lower limit,Children with functional difficulties Point estimate,Children with functional difficulties Upper limit,Children with functional difficulties Lower limit,Time period
+1,Bangladesh,SA,5,Least Developed,1,Primary,1,13.4,13.9,12.9,12.5,13.0,11.9,23.0,25.3,20.7,2019
+6,Belarus,ECA,2,More Developed,3,Primary,1,1.5,2.3,0.8,1.3,2.0,0.6,6.4,13.2,-0.5,2019
+11,Central African Republic,SSA,6,Least Developed,1,Primary,1,32.3,33.9,30.7,30.9,32.9,29.0,35.2,38.1,32.2,2018
+16,Chad,SSA,6,Least Developed,1,Primary,1,63.6,64.7,62.5,62.1,63.4,60.8,67.4,69.3,65.5,2019
+21,Democratic Republic of the Congo,SSA,6,Least Developed,1,Primary,1,32.5,33.6,31.4,31.3,32.6,30.1,37.2,39.5,34.8,2017
+26,Gambia,SSA,6,Least Developed,1,Primary,1,21.3,22.8,19.7,21.0,22.6,19.4,23.5,28.7,18.3,2018
+31,Ghana,SSA,6,Less Developed,2,Primary,1,7.7,8.5,6.9,7.5,8.4,6.6,8.5,10.3,6.7,2017
+36,Guinea-Bissau,SSA,6,Least Developed,1,Primary,1,35.0,36.7,33.3,35.3,37.2,33.4,33.5,38.0,29.1,2018
+41,Guyana,LAC,3,Less Developed,2,Primary,1,2.5,3.2,1.7,2.1,2.8,1.3,4.4,6.8,1.9,2020
+46,Iraq,MENA,4,Less Developed,2,Primary,1,21.6,22.5,20.7,20.5,21.5,19.4,25.9,28.0,23.7,2018
+51,Kiribati,EAP,1,Least Developed,1,Primary,1,1.2,1.9,0.6,0.8,1.4,0.2,2.6,4.5,0.7,2018
+56,Kosovo,ECA,2,Not Classified,0,Primary,1,3.9,5.2,2.5,3.8,5.2,2.4,4.5,9.6,-0.6,2019
+61,Kyrgyzstan,ECA,2,Less Developed,2,Primary,1,3.3,4.2,2.3,3.5,4.5,2.5,1.2,3.2,-0.8,2018
+66,Lesotho,SSA,6,Least Developed,1,Primary,1,4.5,5.3,3.7,4.3,5.0,3.5,7.5,11.0,4.0,2018
+71,Madagascar,SSA,6,Least Developed,1,Primary,1,30.6,32.0,29.3,30.1,31.5,28.7,33.9,37.6,30.2,2018
+76,Mongolia,EAP,1,Less Developed,2,Primary,1,4.7,5.4,4.0,4.5,5.2,3.7,9.7,13.9,5.6,2018
+81,Nepal,SA,5,Least Developed,1,Primary,1,10.0,11.0,9.0,9.1,10.2,8.1,15.3,18.4,12.1,2019
+86,North Macedonia,ECA,2,More Developed,3,Primary,1,10.7,13.1,8.3,10.7,13.3,8.2,10.5,17.6,3.3,2018
+91,State of Palestine,MENA,4,Less Developed,2,Primary,1,2.4,3.1,1.7,1.5,2.1,0.9,6.9,9.9,3.9,2020
+96,Pakistan (Punjab),SA,5,Less Developed,2,Primary,1,18.8,19.4,18.1,18.0,18.7,17.3,22.2,23.7,20.6,2017
+101,Samoa,EAP,1,Less Developed,2,Primary,1,13.6,15.6,11.6,14.6,16.9,12.3,10.6,14.3,6.8,2020
+106,Sao Tome and Principe,SSA,6,Least Developed,1,Primary,1,6.1,7.5,4.7,4.7,6.2,3.3,11.4,15.6,7.2,2019
+111,Sierra Leone,SSA,6,Least Developed,1,Primary,1,27.1,28.3,25.9,26.4,27.7,25.0,29.5,31.9,27.1,2017
+116,Pakistan (Sindh),SA,5,Less Developed,2,Primary,1,52.8,54.0,51.6,52.7,54.0,51.4,53.1,56.0,50.2,2018
+121,Suriname,LAC,3,Less Developed,2,Primary,1,3.3,4.1,2.5,3.0,3.9,2.2,4.9,7.5,2.3,2018
+126,Turks and Caicos Islands,LAC,3,Not Classified,0,Primary,1,7.7,11.2,4.3,6.2,9.5,2.9,0.0,0.0,0.0,2020
+131,Togo,SSA,6,Least Developed,1,Primary,1,11.9,13.2,10.6,11.9,13.3,10.5,11.8,14.7,8.9,2017
+136,Tonga,EAP,1,Less Developed,2,Primary,1,7.0,8.9,5.2,7.0,9.0,5.1,7.1,13.5,0.8,2019
+141,Tunisia,MENA,4,Less Developed,2,Primary,1,4.0,4.8,3.2,4.2,5.1,3.2,3.3,4.9,1.8,2018
+146,Turkmenistan,ECA,2,Less Developed,2,Primary,1,14.1,16.0,12.2,13.8,15.7,11.9,0.0,0.0,0.0,2019
+151,Tuvalu,EAP,1,Least Developed,1,Primary,1,0.9,2.1,-0.4,0.8,2.0,-0.5,0.0,0.0,0.0,2020
+156,Zimbabwe,SSA,6,Less Developed,2,Primary,1,3.2,3.8,2.7,3.1,3.7,2.6,4.3,6.4,2.2,2019
+161,Bangladesh,SA,5,Least Developed,1,Lower secondary,2,10.2,10.8,9.6,9.2,9.8,8.6,21.0,24.0,18.0,2019
+166,Belarus,ECA,2,More Developed,3,Lower secondary,2,0.3,0.6,-0.1,0.1,0.4,-0.1,0.0,0.0,0.0,2019
+171,Central African Republic,SSA,6,Least Developed,1,Lower secondary,2,21.6,23.7,19.5,19.3,21.6,16.9,27.3,31.7,23.0,2018
+176,Chad,SSA,6,Least Developed,1,Lower secondary,2,52.6,54.3,50.9,50.8,52.8,48.8,57.5,60.7,54.4,2019
+181,Democratic Republic of the Congo,SSA,6,Least Developed,1,Lower secondary,2,14.0,15.6,12.3,12.7,14.5,10.9,19.6,23.7,15.5,2017
+186,Gambia,SSA,6,Least Developed,1,Lower secondary,2,23.8,26.4,21.2,22.9,25.5,20.3,33.9,44.4,23.4,2018
+191,Ghana,SSA,6,Less Developed,2,Lower secondary,2,5.9,6.9,4.9,5.2,6.3,4.1,8.8,11.6,6.0,2017
+196,Guinea-Bissau,SSA,6,Least Developed,1,Lower secondary,2,16.7,18.8,14.6,15.4,17.5,13.2,23.5,30.0,17.1,2018
+201,Guyana,LAC,3,Less Developed,2,Lower secondary,2,5.9,7.7,4.1,6.2,8.2,4.2,3.7,7.3,0.0,2020
+206,Iraq,MENA,4,Less Developed,2,Lower secondary,2,21.1,22.5,19.6,20.2,21.8,18.7,24.1,27.4,20.8,2018
+211,Kiribati,EAP,1,Least Developed,1,Lower secondary,2,6.4,8.6,4.1,4.3,6.4,2.2,15.1,22.2,8.0,2018
+216,Kosovo,ECA,2,Not Classified,0,Lower secondary,2,1.4,2.2,0.5,0.9,1.6,0.2,6.5,12.8,0.2,2019
+221,Kyrgyzstan,ECA,2,Less Developed,2,Lower secondary,2,1.1,1.6,0.5,0.7,1.2,0.3,4.3,8.5,0.2,2018
+226,Lesotho,SSA,6,Least Developed,1,Lower secondary,2,9.2,10.8,7.5,9.5,11.4,7.7,5.4,9.7,1.1,2018
+231,Madagascar,SSA,6,Least Developed,1,Lower secondary,2,32.2,33.8,30.7,32.5,34.2,30.8,30.5,34.7,26.2,2018
+236,Mongolia,EAP,1,Less Developed,2,Lower secondary,2,1.7,2.2,1.1,1.1,1.5,0.6,11.7,17.5,6.0,2018
+241,Nepal,SA,5,Least Developed,1,Lower secondary,2,4.6,5.6,3.6,4.3,5.3,3.3,6.7,9.9,3.4,2019
+246,North Macedonia,ECA,2,More Developed,3,Lower secondary,2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2018
+251,State of Palestine,MENA,4,Less Developed,2,Lower secondary,2,2.1,2.7,1.4,1.9,2.5,1.2,3.4,5.6,1.2,2020
+256,Pakistan (Punjab),SA,5,Less Developed,2,Lower secondary,2,18.9,19.8,18.0,18.2,19.2,17.2,22.3,24.7,20.0,2017
+261,Samoa,EAP,1,Less Developed,2,Lower secondary,2,2.6,4.3,0.9,3.0,5.0,1.0,1.0,3.5,-1.4,2020
+266,Sao Tome and Principe,SSA,6,Least Developed,1,Lower secondary,2,4.5,6.3,2.7,3.3,5.1,1.6,9.7,15.5,3.9,2019
+271,Sierra Leone,SSA,6,Least Developed,1,Lower secondary,2,16.8,18.4,15.1,16.3,18.1,14.5,18.5,22.3,14.8,2017
+276,Pakistan (Sindh),SA,5,Less Developed,2,Lower secondary,2,45.6,47.4,43.7,45.6,47.6,43.6,45.6,50.3,40.8,2018
+281,Suriname,LAC,3,Less Developed,2,Lower secondary,2,6.7,8.2,5.2,6.7,8.4,5.1,6.4,10.3,2.4,2018
+286,Turks and Caicos Islands,LAC,3,Not Classified,0,Lower secondary,2,6.3,11.6,1.0,7.4,13.6,1.3,0.0,0.0,0.0,2020
+291,Togo,SSA,6,Least Developed,1,Lower secondary,2,9.6,11.2,8.0,9.8,11.7,8.0,8.8,12.2,5.4,2017
+296,Tonga,EAP,1,Less Developed,2,Lower secondary,2,6.6,8.8,4.4,6.1,8.3,3.8,0.0,0.0,0.0,2019
+301,Tunisia,MENA,4,Less Developed,2,Lower secondary,2,6.1,7.5,4.7,5.0,6.4,3.5,9.8,13.6,6.0,2018
+306,Turkmenistan,ECA,2,Less Developed,2,Lower secondary,2,0.2,0.4,0.0,0.0,0.1,-0.1,0.0,0.0,0.0,2019
+311,Tuvalu,EAP,1,Least Developed,1,Lower secondary,2,7.1,12.3,2.0,8.2,14.1,2.4,0.0,0.0,0.0,2020
+316,Zimbabwe,SSA,6,Less Developed,2,Lower secondary,2,14.5,16.1,12.8,13.7,15.4,12.0,20.3,26.2,14.4,2019
+321,Bangladesh,SA,5,Least Developed,1,Upper secondary,3,24.3,25.1,23.6,23.6,24.4,22.8,34.6,38.2,31.0,2019
+326,Belarus,ECA,2,More Developed,3,Upper secondary,3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2019
+331,Central African Republic,SSA,6,Least Developed,1,Upper secondary,3,33.0,37.8,28.2,29.6,35.0,24.2,43.8,53.8,33.9,2018
+336,Chad,SSA,6,Least Developed,1,Upper secondary,3,53.4,56.5,50.2,50.5,54.3,46.8,61.3,66.9,55.6,2019
+341,Democratic Republic of the Congo,SSA,6,Least Developed,1,Upper secondary,3,17.8,19.3,16.4,17.5,19.1,15.9,19.7,23.3,16.0,2017
+346,Gambia,SSA,6,Least Developed,1,Upper secondary,3,31.3,35.8,26.8,30.4,35.0,25.8,0.0,0.0,0.0,2018
+351,Ghana,SSA,6,Less Developed,2,Upper secondary,3,14.1,15.9,12.4,13.7,15.6,11.8,15.7,19.9,11.6,2017
+356,Guinea-Bissau,SSA,6,Least Developed,1,Upper secondary,3,18.9,21.5,16.4,17.9,20.5,15.2,26.9,35.9,17.8,2018
+361,Guyana,LAC,3,Less Developed,2,Upper secondary,3,17.1,20.2,14.1,16.9,20.2,13.6,18.0,26.2,9.9,2020
+366,Iraq,MENA,4,Less Developed,2,Upper secondary,3,37.2,39.0,35.4,34.9,36.9,32.9,45.9,49.9,41.8,2018
+371,Kiribati,EAP,1,Least Developed,1,Upper secondary,3,17.9,22.7,13.0,14.5,19.4,9.6,0.0,0.0,0.0,2018
+376,Kosovo,ECA,2,Not Classified,0,Upper secondary,3,6.3,8.3,4.4,5.4,7.2,3.5,0.0,0.0,0.0,2019
+381,Kyrgyzstan,ECA,2,Less Developed,2,Upper secondary,3,12.7,15.9,9.5,12.4,15.7,9.2,0.0,0.0,0.0,2018
+386,Lesotho,SSA,6,Least Developed,1,Upper secondary,3,27.3,31.0,23.5,27.0,31.0,23.1,0.0,0.0,0.0,2018
+391,Madagascar,SSA,6,Least Developed,1,Upper secondary,3,54.5,57.0,52.1,54.1,56.7,51.4,57.7,64.5,51.0,2018
+396,Mongolia,EAP,1,Less Developed,2,Upper secondary,3,5.9,7.3,4.5,5.2,6.5,3.8,14.5,22.7,6.4,2018
+401,Nepal,SA,5,Least Developed,1,Upper secondary,3,13.1,14.4,11.8,12.0,13.4,10.7,21.8,26.6,17.1,2019
+406,North Macedonia,ECA,2,More Developed,3,Upper secondary,3,13.5,17.5,9.5,14.6,19.0,10.3,0.0,0.0,0.0,2018
+411,State of Palestine,MENA,4,Less Developed,2,Upper secondary,3,11.4,13.4,9.5,9.7,11.6,7.7,22.7,29.7,15.7,2020
+416,Pakistan (Punjab),SA,5,Less Developed,2,Upper secondary,3,32.7,34.0,31.4,31.9,33.4,30.5,36.6,39.9,33.3,2017
+421,Samoa,EAP,1,Less Developed,2,Upper secondary,3,11.0,13.5,8.4,10.3,13.1,7.5,13.6,19.9,7.3,2020
+426,Sao Tome and Principe,SSA,6,Least Developed,1,Upper secondary,3,15.2,18.7,11.7,12.7,16.4,9.1,24.9,34.2,15.6,2019
+431,Sierra Leone,SSA,6,Least Developed,1,Upper secondary,3,24.2,26.6,21.8,24.6,27.2,21.9,22.6,28.3,16.9,2017
+436,Pakistan (Sindh),SA,5,Less Developed,2,Upper secondary,3,50.9,53.2,48.7,50.9,53.3,48.5,51.0,57.3,44.7,2018
+441,Suriname,LAC,3,Less Developed,2,Upper secondary,3,16.0,19.7,12.4,16.4,20.3,12.5,0.0,0.0,0.0,2018
+446,Turks and Caicos Islands,LAC,3,Not Classified,0,Upper secondary,3,2.3,6.3,-1.7,1.5,4.8,-1.9,0.0,0.0,0.0,2020
+451,Togo,SSA,6,Least Developed,1,Upper secondary,3,22.3,26.4,18.1,22.8,27.6,18.0,20.4,29.0,11.8,2017
+456,Tonga,EAP,1,Less Developed,2,Upper secondary,3,12.7,17.9,7.6,10.8,16.1,5.6,0.0,0.0,0.0,2019
+461,Tunisia,MENA,4,Less Developed,2,Upper secondary,3,19.1,21.7,16.6,17.2,20.0,14.4,25.1,31.0,19.3,2018
+466,Turkmenistan,ECA,2,Less Developed,2,Upper secondary,3,1.2,2.3,0.0,0.5,1.2,-0.3,0.0,0.0,0.0,2019
+471,Tuvalu,EAP,1,Least Developed,1,Upper secondary,3,8.9,20.8,-3.0,0.0,0.0,0.0,0.0,0.0,0.0,2020
+476,Zimbabwe,SSA,6,Less Developed,2,Upper secondary,3,30.6,35.8,25.4,28.3,33.7,22.9,0.0,0.0,0.0,2019
