@@ -84,16 +84,12 @@ yearPred=data.frame(
 i=0
 pred=0
 
-for(i in 1:nrow(dt)) {       # for-loop over rows
-  #set region
-  #1="SA" 2="ECA" 3="SSA" 4="LAC" 5="MENA" 6="EAP"
+for(i in 1:nrow(dt)) {
+
   re=dt[i,]$regionN
-  #set DEveloptment region
-  #0="Not Classified" 1="Least Developed" 2="More Developed" 3="Less Developed"  
   dv=dt[i,]$Dvrregion
-  #set indicatior
-  #1="Primary" 2="Lower Secondary" 3="Upper secondary"
   inid=dt[i,]$IndicatN
+  
   #set year to predict
   t=2021
   
