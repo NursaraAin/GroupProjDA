@@ -3,6 +3,7 @@ library(psych)
 library(caret)
 library(dplyr)
 library(car)
+library(Metrics)
 
 anar=read.csv("totalANAR.csv")
 dt=subset(anar,select = c(regionN,Dvrregion,IndicatN,
@@ -30,6 +31,17 @@ ggplot(dt, aes(x = log(Children.with.functional.difficulties.Point.estimate), y 
   )
 
 set.seed(4)
+split1<- sample(c(rep(0, 0.7 * nrow(dt)), rep(1, 0.3 * nrow(dt))))
+table(split1)
+train=dt[split1==0,]
+test=dt[split1==1,]
+
+model=lm(Children.with.functional.difficulties.Point.estimate~.,data = train)
+dtPred=predict(model,test)
+
+rmse(test$Children.with.functional.difficulties.Point.estimate, dtPred)
+#[1] 22.68196
+
 model=lm(Children.with.functional.difficulties.Point.estimate~.,data = dt)
 
 summary(model)
@@ -62,12 +74,53 @@ plot(model,2)
 dt_tpe=subset(dt,select = -c(Children.without.functional.difficulties.Point.estimate,Children.with.functional.difficulties.Point.estimate))
 model_tpe=lm(Total.Point.estimate~.,data = dt_tpe)
 summary(model_tpe)
+# Call:
+#   lm(formula = Total.Point.estimate ~ ., data = dt_tpe)
+# 
+# Residuals:
+#   Min      1Q  Median      3Q     Max 
+# -81.132  -7.802   2.073  15.234  37.323 
+# 
+# Coefficients:
+#   Estimate Std. Error t value Pr(>|t|)    
+# (Intercept) -8617.5520  5753.9282  -1.498    0.138    
+# regionN        -6.7819     1.4473  -4.686 9.73e-06 ***
+#   Dvrregion      -0.4206     3.5445  -0.119    0.906    
+# IndicatN      -19.0844     2.8337  -6.735 1.44e-09 ***
+#   Time.period     4.3331     2.8487   1.521    0.132    
+# ---
+#   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+# 
+# Residual standard error: 22.67 on 91 degrees of freedom
+# Multiple R-squared:  0.4948,	Adjusted R-squared:  0.4726 
+# F-statistic: 22.28 on 4 and 91 DF,  p-value: 7.569e-13
 plot(model_tpe,2)
 
 #require regression for cwithout
 dt_cthout=subset(dt,select = -c(Total.Point.estimate,Children.with.functional.difficulties.Point.estimate))
 model_cthout=lm(Children.without.functional.difficulties.Point.estimate~.,data=dt_cthout)
 summary(model_cthout)
+# Call:
+#   lm(formula = Children.without.functional.difficulties.Point.estimate ~ 
+#        ., data = dt_cthout)
+# 
+# Residuals:
+#   Min      1Q  Median      3Q     Max 
+# -78.675  -7.834   2.443  16.118  39.733 
+# 
+# Coefficients:
+#   Estimate Std. Error t value Pr(>|t|)    
+# (Intercept) -6759.4879  6048.7077  -1.118 0.266718    
+# regionN        -6.0854     1.5214  -4.000 0.000129 ***
+#   Dvrregion       0.8666     3.7260   0.233 0.816602    
+# IndicatN      -20.1344     2.9789  -6.759 1.29e-09 ***
+#   Time.period     3.4112     2.9946   1.139 0.257648    
+# ---
+#   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+# 
+# Residual standard error: 23.83 on 91 degrees of freedom
+# Multiple R-squared:  0.4596,	Adjusted R-squared:  0.4358 
+# F-statistic: 19.35 on 4 and 91 DF,  p-value: 1.513e-11
 plot(model_cthout,2)
 
 #create prediction of ANAR
@@ -89,13 +142,13 @@ year=5
 for(j in 1:year){
   pred=0
   for(i in 1:nrow(dt)) {
-
+    #predict for each row
     re=dt[i,]$regionN
     dv=dt[i,]$Dvrregion
     indi=dt[i,]$IndicatN
     
     #set year to predict
-    t=2020+j
+    t=yearPred[nrow(yearPred),]$year+1
     
     #set total estimate
     d0=data.frame(regionN=re,Dvrregion=dv,IndicatN=indi,Time.period=t,interval = "confidence")
@@ -117,7 +170,7 @@ for(j in 1:year){
     meanPred=pred/nrow(dt)
     #create data frame
     newPred=data.frame(
-      year=2020+j,
+      year=yearPred[nrow(yearPred),]$year+1,
       anarDisabled=meanPred
     )
     #insert to yearPred
