@@ -127,5 +127,5 @@ for(j in 1:year){
 
 plot(yearPred$year, yearPred$anarDisabled, col="red",type = "b", lty = 2, frame=FALSE)
 lines(yearPred[1:4,]$year, yearPred[1:4,]$anarDisabled, col="blue",type = "b", lty = 1)
-legend("topleft", legend=c("Predicted", "Actual"),
+legend("bottomright", legend=c("Predicted", "Actual"),
        col=c("red", "blue"), lty = 2:1, cex=0.8)
