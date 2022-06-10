@@ -9,24 +9,24 @@ comp=read.csv("totalCompletionRate.csv")
 dt2=subset(comp,select = c(Region,Development.regions,
                           Total.Point.estimate,Children.without.functional.difficulties.Point.estimate,
                           Children.with.functional.difficulties.Point.estimate,Time.period))
-corPlot(cor(dt2))
-pairs(cor(dt2))
+# corPlot(cor(dt2))
+# pairs(cor(dt2))
+# 
+# 
+# ggplot(dt2, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Development.regions))) +
+#   stat_smooth(method = "lm",
+#               col = "#C42126", se = FALSE, size = 1
+#   )
+# ggplot(dt2, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Region))) +
+#   stat_smooth(method = "lm",
+#               col = "#C42126", se = FALSE, size = 1
+#   )
+# ggplot(dt2, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Time.period))) +
+#   stat_smooth(method = "lm",
+#               col = "#C42126", se = FALSE, size = 1
+#   )
 
-
-ggplot(dt2, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Development.regions))) +
-  stat_smooth(method = "lm",
-              col = "#C42126", se = FALSE, size = 1
-  )
-ggplot(dt2, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Region))) +
-  stat_smooth(method = "lm",
-              col = "#C42126", se = FALSE, size = 1
-  )
-ggplot(dt2, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Time.period))) +
-  stat_smooth(method = "lm",
-              col = "#C42126", se = FALSE, size = 1
-  )
-
-set.seed(6)
+set.seed(4)
 split1<- sample(c(rep(0, 0.7 * nrow(dt2)), rep(1, 0.3 * nrow(dt2))))
 table(split1)
 train=dt2[split1==0,]
@@ -115,23 +115,23 @@ summary(model_cthout)
 
 plot(model_cthout,2)
 
-#create prediction of ANAR
+#create prediction of comp
 hmph=subset(dt2,select = c(Time.period,Children.with.functional.difficulties.Point.estimate))
 a=colMeans(hmph[hmph$Time.period=='2017',])
 b=colMeans(hmph[hmph$Time.period=='2018',])
 c=colMeans(hmph[hmph$Time.period=='2019',])
 d=colMeans(hmph[hmph$Time.period=='2020',])
 
-yearPred=data.frame(
+yearPred2=data.frame(
   year=c(2017:2020),
-  anarDisabled=c(as.double(a[2]),as.double(b[2]),as.double(c[2]),as.double(d[2]))
+  compDisabled=c(as.double(a[2]),as.double(b[2]),as.double(c[2]),as.double(d[2]))
 )
 i=0
 j=0
 #set how many year to predict
-year=5
+yr=5
 
-for(j in 1:year){
+for(j in 1:yr){
   pred=0
   for(i in 1:nrow(dt2)) {
     #predict for each row
@@ -139,7 +139,7 @@ for(j in 1:year){
     dv=dt2[i,]$Development.regions
     
     #set year to predict
-    t=yearPred[nrow(yearPred),]$year+1
+    t=2020+j
     
     #set total estimate
     d0=data.frame(Region=re,Development.regions=dv,Time.period=t,interval = "confidence")
@@ -160,15 +160,16 @@ for(j in 1:year){
   meanPred=pred/nrow(dt2)
   #create data frame
   newPred=data.frame(
-    year=yearPred[nrow(yearPred),]$year+1,
-    anarDisabled=meanPred
+    yr=2020+j,
+    compDisabled=meanPred
   )
-  #insert to yearPred
-  yearPred[nrow(yearPred) + 1,]=newPred
+  #insert to yearPred2
+  yearPred2[nrow(yearPred2) + 1,]=newPred
 }
 
 
-plot(yearPred$year, yearPred$anarDisabled, col="red",type = "b", lty = 2, frame=FALSE)
-lines(yearPred[1:4,]$year, yearPred[1:4,]$anarDisabled, col="blue",type = "b", lty = 1)
+plot(yearPred2$year, yearPred2$compDisabled, col="red",type = "b", lty = 2, frame=FALSE,
+     main = "Percentage of children with disabilities completing primary school", xlab="Year",ylab="Percentage of children with disabilities")
+lines(yearPred2[1:4,]$year, yearPred2[1:4,]$compDisabled, col="blue",type = "b", lty = 1)
 legend("topright", legend=c("Predicted", "Actual"),
        col=c("red", "blue"), lty = 2:1, cex=0.8)

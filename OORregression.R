@@ -9,27 +9,27 @@ dt1=subset(oor,select = c(regionN,Dvrregion,IndicatN,
                           Total.Point.estimate,Children.without.functional.difficulties.Point.estimate,
                           Children.with.functional.difficulties.Point.estimate,Time.period))
 corPlot(cor(dt1))
-pairs(cor(dt1))
+# pairs(cor(dt1))
+# 
+# 
+# ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Dvrregion))) +
+#   stat_smooth(method = "lm",
+#               col = "#C42126", se = FALSE, size = 1
+#   )
+# ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(regionN))) +
+#   stat_smooth(method = "lm",
+#               col = "#C42126", se = FALSE, size = 1
+#   )
+# ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(IndicatN))) +
+#   stat_smooth(method = "lm",
+#               col = "#C42126", se = FALSE, size = 1
+#   )
+# ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Time.period))) +
+#   stat_smooth(method = "lm",
+#               col = "#C42126", se = FALSE, size = 1
+#   )
 
-
-ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Dvrregion))) +
-  stat_smooth(method = "lm",
-              col = "#C42126", se = FALSE, size = 1
-  )
-ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(regionN))) +
-  stat_smooth(method = "lm",
-              col = "#C42126", se = FALSE, size = 1
-  )
-ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(IndicatN))) +
-  stat_smooth(method = "lm",
-              col = "#C42126", se = FALSE, size = 1
-  )
-ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Time.period))) +
-  stat_smooth(method = "lm",
-              col = "#C42126", se = FALSE, size = 1
-  )
-
-set.seed(5)
+set.seed(8)
 split1<- sample(c(rep(0, 0.7 * nrow(dt1)), rep(1, 0.3 * nrow(dt1))))
 table(split1)
 train=dt1[split1==0,]
@@ -136,9 +136,9 @@ yearPred1=data.frame(
 i=0
 j=0
 #set how many year to predict
-year=5
+yr=5
 
-for(j in 1:year){
+for(j in 1:yr){
   pred=0
   for(i in 1:nrow(dt1)) {
     #predict for each row
@@ -147,7 +147,7 @@ for(j in 1:year){
     indi=dt1[i,]$IndicatN
     
     #set year to predict
-    t=yearPred[nrow(yearPred),]$year+1
+    t=yearPred1[nrow(yearPred1),]$year+1
     
     #set total estimate
     d0=data.frame(regionN=re,Dvrregion=dv,IndicatN=indi,Time.period=t,interval = "confidence")
@@ -169,7 +169,7 @@ for(j in 1:year){
   meanPred=pred/nrow(dt1)
   #create data frame
   newPred=data.frame(
-    year=yearPred[nrow(yearPred),]$year+1,
+    yr=yearPred1[nrow(yearPred1),]$year+1,
     oorDisabled=meanPred
   )
   #insert to yearPred
@@ -177,7 +177,8 @@ for(j in 1:year){
 }
 
 
-plot(yearPred1$year, yearPred1$oorDisabled, col="red",type = "b", lty = 2, frame=FALSE)
+plot(yearPred1$year, yearPred1$oorDisabled, col="red",type = "b", lty = 2, frame=FALSE,
+     main = "Percentage of children with disabilities dropping out from school", xlab="Year",ylab="Percentage of children with disabilities")
 lines(yearPred1[1:4,]$year, yearPred1[1:4,]$oorDisabled, col="blue",type = "b", lty = 1)
 legend("bottomright", legend=c("Predicted", "Actual"),
        col=c("red", "blue"), lty = 2:1, cex=0.8)

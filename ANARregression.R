@@ -10,25 +10,25 @@ dt=subset(anar,select = c(regionN,Dvrregion,IndicatN,
                         Total.Point.estimate,Children.without.functional.difficulties.Point.estimate,
                         Children.with.functional.difficulties.Point.estimate,Time.period))
 corPlot(cor(dt))
-pairs(cor(dt))
-
-
-ggplot(dt, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Dvrregion))) +
-  stat_smooth(method = "lm",
-              col = "#C42126", se = FALSE, size = 1
-  )
-ggplot(dt, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(regionN))) +
-  stat_smooth(method = "lm",
-              col = "#C42126", se = FALSE, size = 1
-  )
-ggplot(dt, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(IndicatN))) +
-  stat_smooth(method = "lm",
-              col = "#C42126", se = FALSE, size = 1
-  )
-ggplot(dt, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Time.period))) +
-  stat_smooth(method = "lm",
-              col = "#C42126", se = FALSE, size = 1
-  )
+# pairs(cor(dt))
+# 
+# 
+# ggplot(dt, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Dvrregion))) +
+#   stat_smooth(method = "lm",
+#               col = "#C42126", se = FALSE, size = 1
+#   )
+# ggplot(dt, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(regionN))) +
+#   stat_smooth(method = "lm",
+#               col = "#C42126", se = FALSE, size = 1
+#   )
+# ggplot(dt, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(IndicatN))) +
+#   stat_smooth(method = "lm",
+#               col = "#C42126", se = FALSE, size = 1
+#   )
+# ggplot(dt, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Time.period))) +
+#   stat_smooth(method = "lm",
+#               col = "#C42126", se = FALSE, size = 1
+#   )
 
 set.seed(4)
 split1<- sample(c(rep(0, 0.7 * nrow(dt)), rep(1, 0.3 * nrow(dt))))
@@ -178,7 +178,8 @@ for(j in 1:year){
 }
 
 
-plot(yearPred$year, yearPred$anarDisabled, col="red",type = "b", lty = 2, frame=FALSE)
+plot(yearPred$year, yearPred$anarDisabled, col="red",type = "b", lty = 2, frame=FALSE,
+     main = "Percentage of children with disabilities attending to school", xlab="Year",ylab="Percentage of children with disabilities")
 lines(yearPred[1:4,]$year, yearPred[1:4,]$anarDisabled, col="blue",type = "b", lty = 1)
 legend("bottomright", legend=c("Predicted", "Actual"),
        col=c("red", "blue"), lty = 2:1, cex=0.8)
