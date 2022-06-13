@@ -1,14 +1,15 @@
 #lasso regression
 library(glmnet)
-oor=read.csv("HousingOOR.csv")
-dt1=subset(oor,select = c(reg,develop,level,X,
-                          Total.Point.estimate,Children.without.functional.difficulties.Point.estimate,
-                          Children.with.functional.difficulties.Point.estimate,Time.period))
-str(dt1)
 
-y <- dt1$Children.without.functional.difficulties.Point.estimate
+baca=read.csv("Reading.csv")
+dt3=subset(baca,select = c(reg,develop,cat,
+                           Total.Point.estimate,Children.without.functional.difficulties.Point.estimate,
+                           Children.with.functional.difficulties.Point.estimate,Time.period))
+str(dt3)
 
-x <- data.matrix(dt1[, c('reg', 'develop', 'level','X','Time.period')])
+y <- dt3$Children.without.functional.difficulties.Point.estimate
+
+x <- data.matrix(dt3[, c('reg', 'develop', 'cat','Time.period')])
 
 
 #perform k-fold cross-validation to find optimal lambda value
@@ -34,16 +35,15 @@ sse <- sum((y_predicted - y)^2)
 #find R-Squared
 rsq <- 1 - sse/sst
 rsq
-#[1] 0.2719288
-
+#0.3958254
 hey=as.numeric(y_predicted)
-preds <- data.frame(cbind(actuals=dt1$Children.with.functional.difficulties.Point.estimate, predicteds=hey))
+preds <- data.frame(cbind(actuals=dt3$Children.with.functional.difficulties.Point.estimate, predicteds=hey))
 
 mse = mean((preds$actuals - preds$predicteds)^2)
 mae = MAE(preds$actuals, preds$predicteds)
 rmse = RMSE(preds$actuals, preds$predicteds)
 cat("MSE: ", mse, "MAE: ", mae, " RMSE: ", rmse)
-#MSE:  241.777 MAE:  11.75847  RMSE:  15.54918
+#MSE:  198.1273 MAE:  11.50832  RMSE:  14.07577
 
 x = 1:length(preds$actuals)
 plot(x, preds$actuals, col = "red", type = "l", lwd=2,
@@ -54,5 +54,5 @@ legend("topright",  legend = c("original", "predicted"),
 grid()
 cor(preds)
 #              actuals predicteds
-# actuals    1.0000000  0.4947261
-# predicteds 0.4947261  1.0000000
+# actuals    1.0000000  0.7866877
+# predicteds 0.7866877  1.0000000

@@ -5,20 +5,18 @@ library(dplyr)
 library(car)
 library(Metrics)
 
-oor=read.csv("totalOOR.csv"
-dt=subset(oor,select = c(regionN,Dvrregion,IndicatN,
-                         Total.Point.estimate,Children.without.functional.difficulties.Point.estimate,
-                         Children.with.functional.difficulties.Point.estimate,Time.period))
-str(dt)
+oor=read.csv("HousingOOR.csv")
+dt1=subset(oor,select = c(reg,develop,level,X,
+                          Total.Point.estimate,Children.without.functional.difficulties.Point.estimate,
+                          Children.with.functional.difficulties.Point.estimate,Time.period))
+str(dt1)
 
-indexes = createDataPartition(dt$Children.with.functional.difficulties.Point.estimate, 
+indexes = createDataPartition(dt1$Children.with.functional.difficulties.Point.estimate, 
                               p = .85, list = F)
 
-set.seed(12)
-
-indexes2 = createDataPartition(boston$medv, p = .85, list = F)
-train = dt[indexes, ]
-test = dt[-indexes, ]
+set.seed(4)
+train = dt1[indexes, ]
+test = dt1[-indexes, ]
 
 train_x = train[, -6]
 train_x = scale(train_x)[,]
@@ -40,14 +38,18 @@ mae = caret::MAE(test_y, pred_y)
 rmse = caret::RMSE(test_y, pred_y)
 
 cat("MSE: ", mse, "MAE: ", mae, " RMSE: ", rmse)
-#MSE:  38.47043 MAE:  4.958333  RMSE:  6.202454
+#MSE:  29.3579 MAE:  4.49  RMSE:  5.418293
 
 x = 1:length(test_y)
 
 plot(x, test_y, col = "red", type = "l", lwd=2,
-     main = "KNN oor data prediction")
+     main = "anar knn data prediction")
 lines(x, pred_y, col = "blue", lwd=2)
 legend("topright",  legend = c("original", "predicted"), 
        fill = c("red", "blue"), col = 2:3,  adj = c(0, 0.6))
 grid()
 
+cor(data.frame(test_y, pred_y))
+#          test_y    pred_y
+# test_y 1.0000000 0.9237157
+# pred_y 0.9237157 1.0000000

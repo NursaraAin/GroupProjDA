@@ -1,33 +1,13 @@
-setwd("C:/Users/nursa/OneDrive/GroupProjDA")
 library(psych)
 library(caret)
 library(dplyr)
 library(car)
 
-oor=read.csv("totalOOR.csv")
-dt1=subset(oor,select = c(regionN,Dvrregion,IndicatN,
+oor=read.csv("HousingOOR.csv")
+dt1=subset(oor,select = c(reg,develop,level,X,
                           Total.Point.estimate,Children.without.functional.difficulties.Point.estimate,
                           Children.with.functional.difficulties.Point.estimate,Time.period))
 corPlot(cor(dt1))
-# pairs(cor(dt1))
-# 
-# 
-# ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Dvrregion))) +
-#   stat_smooth(method = "lm",
-#               col = "#C42126", se = FALSE, size = 1
-#   )
-# ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(regionN))) +
-#   stat_smooth(method = "lm",
-#               col = "#C42126", se = FALSE, size = 1
-#   )
-# ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(IndicatN))) +
-#   stat_smooth(method = "lm",
-#               col = "#C42126", se = FALSE, size = 1
-#   )
-# ggplot(dt1, aes(x = log(Children.with.functional.difficulties.Point.estimate), y = log(Time.period))) +
-#   stat_smooth(method = "lm",
-#               col = "#C42126", se = FALSE, size = 1
-#   )
 
 set.seed(8)
 split1<- sample(c(rep(0, 0.7 * nrow(dt1)), rep(1, 0.3 * nrow(dt1))))
@@ -39,87 +19,91 @@ model=lm(Children.with.functional.difficulties.Point.estimate~.,data = train)
 dtPred=predict(model,test)
 
 rmse(test$Children.with.functional.difficulties.Point.estimate, dtPred)
-#[1] 6.389404
+#2.270764
 
-model=lm(Children.with.functional.difficulties.Point.estimate~.,data = dt1)
+#model=lm(Children.with.functional.difficulties.Point.estimate~.,data = dt1)
 
 summary(model)
 # Call:
 #   lm(formula = Children.with.functional.difficulties.Point.estimate ~ 
-#        ., data = dt1)
+#        ., data = train)
 # 
 # Residuals:
 #   Min      1Q  Median      3Q     Max 
-# -71.092 -11.987   1.615  14.548  58.649 
-# 
-# Coefficients:
-#                                                          Estimate Std. Error t value Pr(>|t|)    
-# (Intercept)                                             3415.5121  6653.0177   0.513   0.6090    
-# regionN                                                    4.6039     1.8450   2.495   0.0144 *  
-# Dvrregion                                                  4.6125     4.0560   1.137   0.2585    
-# IndicatN                                                 -18.8861     3.9734  -4.753 7.65e-06 ***
-# Total.Point.estimate                                       0.3148     0.3360   0.937   0.3515    
-# Children.without.functional.difficulties.Point.estimate    0.1861     0.3197   0.582   0.5619    
-# Time.period                                               -1.6807     3.2951  -0.510   0.6113    
-# ---
-#   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-# 
-# Residual standard error: 25.81 on 89 degrees of freedom
-# Multiple R-squared:  0.5246,	Adjusted R-squared:  0.4925 
-# F-statistic: 16.37 on 6 and 89 DF,  p-value: 1.295e-12
-
-plot(model,2)
-#require regression for tpe
-dt1_tpe=subset(dt1,select = -c(Children.without.functional.difficulties.Point.estimate,Children.with.functional.difficulties.Point.estimate))
-model_tpe=lm(Total.Point.estimate~.,data = dt1_tpe)
-summary(model_tpe)
-# Call:
-#   lm(formula = Total.Point.estimate ~ ., data = dt1_tpe)
-# 
-# Residuals:
-#   Min      1Q  Median      3Q     Max 
-# -18.560  -8.372  -1.467   5.047  43.409 
+# -4.2412 -1.7173 -0.6061  0.9210 10.6210 
 # 
 # Coefficients:
 #   Estimate Std. Error t value Pr(>|t|)    
-# (Intercept) 1269.33260 3085.64396   0.411   0.6818    
-# regionN        3.87480    0.77613   4.992 2.86e-06 ***
-#   Dvrregion      0.04993    1.90077   0.026   0.9791    
-# IndicatN       2.86875    1.51961   1.888   0.0622 .  
-# Time.period   -0.63165    1.52765  -0.413   0.6802    
+# (Intercept)                                             -536.2213   720.2423  -0.745    0.459    
+# reg                                                       -0.2311     0.2999  -0.771    0.443    
+# develop                                                   -0.6709     0.7290  -0.920    0.360    
+# level                                                      0.4489     0.4004   1.121    0.266    
+# X                                                          0.5994     0.6604   0.908    0.367    
+# Total.Point.estimate                                       4.7735     0.3821  12.494  < 2e-16 ***
+#   Children.without.functional.difficulties.Point.estimate   -3.8013     0.3869  -9.824  4.1e-15 ***
+#   Time.period                                                0.2665     0.3566   0.747    0.457    
 # ---
 #   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 # 
-# Residual standard error: 12.16 on 91 degrees of freedom
-# Multiple R-squared:  0.3201,	Adjusted R-squared:  0.2902 
-# F-statistic: 10.71 on 4 and 91 DF,  p-value: 3.708e-07
+# Residual standard error: 2.707 on 75 degrees of freedom
+# Multiple R-squared:  0.9783,	Adjusted R-squared:  0.9763 
+# F-statistic: 483.1 on 7 and 75 DF,  p-value: < 2.2e-16
+
+
+plot(model,2)
+#require regression for tpe
+dt1_tpe=subset(train,select = -c(Children.without.functional.difficulties.Point.estimate,Children.with.functional.difficulties.Point.estimate))
+model_tpe=lm(Total.Point.estimate~.,data = dt1_tpe)
+summary(model_tpe)
+# lm(formula = Total.Point.estimate ~ ., data = dt1_tpe)
+# 
+# Residuals:
+#   Min      1Q  Median      3Q     Max 
+# -21.256  -9.286  -2.427   6.926  42.921 
+# 
+# Coefficients:
+#   Estimate Std. Error t value Pr(>|t|)   
+# (Intercept) -235.8479  3791.3357  -0.062  0.95056   
+# reg            4.7595     1.4932   3.187  0.00207 **
+#   develop       -0.8227     3.7722  -0.218  0.82794   
+# level          3.8127     2.0324   1.876  0.06445 . 
+# X            -10.9006     3.1967  -3.410  0.00104 **
+#   Time.period    0.1216     1.8773   0.065  0.94851   
+# ---
+#   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+# 
+# Residual standard error: 14.35 on 77 degrees of freedom
+# Multiple R-squared:  0.3029,	Adjusted R-squared:  0.2576 
+# F-statistic: 6.692 on 5 and 77 DF,  p-value: 3.173e-05
+
 plot(model_tpe,2)
 
 #require regression for cwithout
-dt1_cthout=subset(dt1,select = -c(Total.Point.estimate,Children.with.functional.difficulties.Point.estimate))
+dt1_cthout=subset(train,select = -c(Total.Point.estimate,Children.with.functional.difficulties.Point.estimate))
 model_cthout=lm(Children.without.functional.difficulties.Point.estimate~.,data=dt1_cthout)
 summary(model_cthout)
-# Call:
+# call:
 #   lm(formula = Children.without.functional.difficulties.Point.estimate ~ 
 #        ., data = dt1_cthout)
 # 
 # Residuals:
 #   Min      1Q  Median      3Q     Max 
-# -18.773  -8.270  -1.656   5.033  42.530 
+# -21.208  -8.718  -3.010   7.631  42.289 
 # 
 # Coefficients:
 #   Estimate Std. Error t value Pr(>|t|)    
-# (Intercept) 1570.4936  3055.9831   0.514    0.609    
-# regionN        3.8475     0.7687   5.005 2.71e-06 ***
-#   Dvrregion      0.3626     1.8825   0.193    0.848    
-# IndicatN       2.4781     1.5050   1.647    0.103    
-# Time.period   -0.7810     1.5130  -0.516    0.607    
+# (Intercept) -1.047e+01  3.744e+03  -0.003 0.997775    
+# reg          4.726e+00  1.474e+00   3.205 0.001965 ** 
+#   develop     -4.025e-01  3.725e+00  -0.108 0.914226    
+# level        3.547e+00  2.007e+00   1.768 0.081088 .  
+# X           -1.109e+01  3.156e+00  -3.514 0.000743 ***
+#   Time.period  9.757e-03  1.854e+00   0.005 0.995814    
 # ---
 #   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 # 
-# Residual standard error: 12.04 on 91 degrees of freedom
-# Multiple R-squared:  0.3174,	Adjusted R-squared:  0.2874 
-# F-statistic: 10.58 on 4 and 91 DF,  p-value: 4.408e-07
+# Residual standard error: 14.17 on 77 degrees of freedom
+# Multiple R-squared:  0.302,	Adjusted R-squared:  0.2566 
+# F-statistic: 6.662 on 5 and 77 DF,  p-value: 3.329e-05
 plot(model_cthout,2)
 
 #create prediction of OOR
@@ -136,30 +120,32 @@ yearPred1=data.frame(
 i=0
 j=0
 #set how many year to predict
-yr=5
+year=5
 
-for(j in 1:yr){
+for(j in 1:year){
   pred=0
   for(i in 1:nrow(dt1)) {
     #predict for each row
-    re=dt1[i,]$regionN
-    dv=dt1[i,]$Dvrregion
-    indi=dt1[i,]$IndicatN
+    re=dt1[i,]$reg
+    dv=dt1[i,]$develop
+    indi=dt1[i,]$level
+    house=dt1[i,]$X
     
     #set year to predict
     t=yearPred1[nrow(yearPred1),]$year+1
     
     #set total estimate
-    d0=data.frame(regionN=re,Dvrregion=dv,IndicatN=indi,Time.period=t,interval = "confidence")
+    d0=data.frame(reg=re,develop=dv,level=indi,X=house,Time.period=t,interval = "confidence")
     tpe=as.double(predict(model_tpe,d0))
     
     #set cthout
-    d1=data.frame(regionN=re,Dvrregion=dv,IndicatN=indi,Time.period=t,interval = "confidence")
+    d1=data.frame(reg=re,develop=dv,level=indi,X=house,Time.period=t,interval = "confidence")
     cthout=as.double(predict(model_cthout,d1))
     
-    newdata=data.frame(regionN=re,
-                       Dvrregion=dv,
-                       IndicatN=indi,
+    newdata=data.frame(reg=re,
+                       develop=dv,
+                       level=indi,
+                       X=house,
                        Total.Point.estimate=tpe,
                        Children.without.functional.difficulties.Point.estimate=cthout,
                        Time.period = t, interval = "confidence")
@@ -169,10 +155,10 @@ for(j in 1:yr){
   meanPred=pred/nrow(dt1)
   #create data frame
   newPred=data.frame(
-    yr=yearPred1[nrow(yearPred1),]$year+1,
-    oorDisabled=meanPred
+    year=yearPred1[nrow(yearPred1),]$year+1,
+    anarDisabled=meanPred
   )
-  #insert to yearPred
+  #insert to yearPred1
   yearPred1[nrow(yearPred1) + 1,]=newPred
 }
 
