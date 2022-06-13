@@ -1,16 +1,16 @@
 #lasso regression
+library(glmnet)
 
-ANAR = read.csv("totalANAR.csv")
-dt=subset(completionrate,select = c(regionN,Dvrregion,IndicatN,
-                                    Total.Point.estimate,Children.without.functional.difficulties.Point.estimate,
-                                    Children.with.functional.difficulties.Point.estimate,Time.period))
+anar=read.csv("ANAR/HousingANAR.csv")
+dt=subset(anar,select = c(reg,develop,level,X,
+                          Total.Point.estimate,Children.without.functional.difficulties.Point.estimate,
+                          Children.with.functional.difficulties.Point.estimate,Time.period))
 str(dt)
 
-y <- ANAR$Children.without.functional.difficulties.Point.estimate
+y <- anar$Children.without.functional.difficulties.Point.estimate
 
-x <- data.matrix(ANAR[, c('regionN', 'Dvrregion', 'IndicatN','Time.period')])
+x <- data.matrix(anar[, c('reg', 'develop', 'level','X','Time.period')])
 
-library(glmnet)
 
 #perform k-fold cross-validation to find optimal lambda value
 cv_model <- cv.glmnet(x, y, alpha = 1)
@@ -36,3 +36,23 @@ sse <- sum((y_predicted - y)^2)
 rsq <- 1 - sse/sst
 rsq
 #0.4557332
+hey=as.numeric(y_predicted)
+preds <- data.frame(cbind(actuals=dt$Children.with.functional.difficulties.Point.estimate, predicteds=hey))
+
+mse = mean((preds$actuals - preds$predicteds)^2)
+mae = MAE(preds$actuals, preds$predicteds)
+rmse = RMSE(preds$actuals, preds$predicteds)
+cat("MSE: ", mse, "MAE: ", mae, " RMSE: ", rmse)
+#MSE:  433.1065 MAE:  16.10216  RMSE:  20.81121
+
+x = 1:length(preds$actuals)
+plot(x, preds$actuals, col = "red", type = "l", lwd=2,
+     main = "anar lg data prediction")
+lines(x, preds$predicteds, col = "blue", lwd=2)
+legend("topright",  legend = c("original", "predicted"), 
+       fill = c("red", "blue"), col = 2:3,  adj = c(0, 0.6))
+grid()
+cor(preds)
+#               actuals predicteds
+# actuals    1.0000000  0.7494654
+# predicteds 0.7494654  1.0000000

@@ -4,8 +4,8 @@ library(dplyr)
 library(car)
 library(Metrics)
 
-anar=read.csv("totalANAR.csv")
-dt=subset(anar,select = c(regionN,Dvrregion,IndicatN,
+anar=read.csv("ANAR/HousingANAR.csv")
+dt=subset(anar,select = c(reg,develop,level,X,
                           Total.Point.estimate,Children.without.functional.difficulties.Point.estimate,
                           Children.with.functional.difficulties.Point.estimate,Time.period))
 str(dt)
@@ -13,9 +13,7 @@ str(dt)
 indexes = createDataPartition(dt$Children.with.functional.difficulties.Point.estimate, 
                               p = .85, list = F)
 
-set.seed(12)
-
-indexes2 = createDataPartition(boston$medv, p = .85, list = F)
+set.seed(4)
 train = dt[indexes, ]
 test = dt[-indexes, ]
 
@@ -39,7 +37,7 @@ mae = caret::MAE(test_y, pred_y)
 rmse = caret::RMSE(test_y, pred_y)
 
 cat("MSE: ", mse, "MAE: ", mae, " RMSE: ", rmse)
-#MSE:  472.2275 MAE:  14.16333  RMSE:  21.7308
+#MSE:  80.29747 MAE:  7.76875  RMSE:  8.960886
 
 x = 1:length(test_y)
 
@@ -50,3 +48,7 @@ legend("topright",  legend = c("original", "predicted"),
        fill = c("red", "blue"), col = 2:3,  adj = c(0, 0.6))
 grid()
 
+cor(data.frame(test_y, pred_y))
+#           test_y    pred_y
+# test_y 1.0000000 0.9739955
+# pred_y 0.9739955 1.0000000
