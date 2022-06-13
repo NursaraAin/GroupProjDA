@@ -1,0 +1,120 @@
+﻿id,Countries and areas,Region,reg,Development regions,develop,indicator,level,Category,,Total Point estimate,Total Upper limit,Total Lower limit,Children without functional difficulties Point estimate,Children without functional difficulties Upper limit,Children without functional difficulties Lower limit,Children with functional difficulties Point estimate,Children with functional difficulties Upper limit,Children with functional difficulties Lower limit,Time period
+4,Bangladesh,SA,5,Least Developed,1,Primary,1,Urban,2,84.3,85.6,82.9,84.9,86.3,83.6,76.1,81.8,70.3,2019
+5,Bangladesh,SA,5,Least Developed,1,Primary,1,Rural,1,82.2,82.9,81.5,83.3,84,82.7,71.2,73.9,68.5,2019
+14,Central African Republic,SSA,6,Least Developed,1,Primary,1,Urban,2,86.7,88.6,84.9,86.8,89,84.5,86.7,90.1,83.2,2018
+15,Central African Republic,SSA,6,Least Developed,1,Primary,1,Rural,1,65.8,68,63.7,66.8,69.4,64.3,63.9,67.6,60.2,2018
+19,Chad,SSA,6,Least Developed,1,Primary,1,Urban,2,64.9,67.4,62.5,67.5,70.4,64.6,58.2,62.8,53.6,2019
+20,Chad,SSA,6,Least Developed,1,Primary,1,Rural,1,38.9,40.1,37.7,40.7,42.2,39.3,34.3,36.5,32.2,2019
+24,Democratic Republic of the Congo,SSA,6,Least Developed,1,Primary,1,Urban,2,86,87.5,84.5,86.2,87.9,84.5,85.3,88.6,81.9,2017
+25,Democratic Republic of the Congo,SSA,6,Least Developed,1,Primary,1,Rural,1,70.7,72,69.4,71.8,73.2,70.3,66.8,69.5,64.1,2017
+29,Gambia,SSA,6,Least Developed,1,Primary,1,Urban,2,86.1,88,84.1,86.8,88.8,84.8,80.8,87.7,73.9,2018
+30,Gambia,SSA,6,Least Developed,1,Primary,1,Rural,1,70.8,73.1,68.5,70.4,72.8,68,75.1,82.6,67.6,2018
+34,Ghana,SSA,6,Less Developed,2,Primary,1,Urban,2,86.5,88,84.9,86.6,88.3,84.9,85.9,89.6,82.2,2017
+35,Ghana,SSA,6,Less Developed,2,Primary,1,Rural,1,78,79.6,76.4,78.3,80.2,76.4,77,80.5,73.6,2017
+39,Guinea-Bissau,SSA,6,Least Developed,1,Primary,1,Urban,2,84.2,86.6,81.8,84.2,86.8,81.6,84.4,90.6,78.3,2018
+40,Guinea-Bissau,SSA,6,Least Developed,1,Primary,1,Rural,1,60.2,62.3,58.1,62.1,64.4,59.9,50.4,56.2,44.7,2018
+44,Guyana,LAC,3,Less Developed,2,Primary,1,Urban,2,96.8,98.4,95.2,97.5,99.1,95.9,94.5,99.4,89.7,2020
+45,Guyana,LAC,3,Less Developed,2,Primary,1,Rural,1,96.6,97.6,95.5,97.2,98.3,96.1,93.2,96.9,89.4,2020
+49,Iraq,MENA,4,Less Developed,2,Primary,1,Urban,2,80.3,81.4,79.2,81.5,82.7,80.2,76.2,78.7,73.6,2018
+50,Iraq,MENA,4,Less Developed,2,Primary,1,Rural,1,71.8,73.6,70,73.7,75.7,71.7,63.6,67.7,59.4,2018
+54,Kiribati,EAP,1,Least Developed,1,Primary,1,Urban,2,96.8,98.5,95.1,97.8,99.4,96.2,93.5,98.5,88.4,2018
+55,Kiribati,EAP,1,Least Developed,1,Primary,1,Rural,1,98,99,97,98.5,99.5,97.5,96.3,99.1,93.5,2018
+65,Kyrgyzstan,ECA,2,Less Developed,2,Primary,1,Rural,1,95.4,96.9,94,95.2,96.7,93.6,98,101.4,94.6,2018
+69,Lesotho,SSA,6,Least Developed,1,Primary,1,Urban,2,97.9,98.9,96.8,97.9,99,96.8,97.3,101.2,93.5,2018
+70,Lesotho,SSA,6,Least Developed,1,Primary,1,Rural,1,96.9,97.6,96.1,96.9,97.7,96.2,96.1,99.2,92.9,2018
+74,Madagascar,SSA,6,Least Developed,1,Primary,1,Urban,2,81.3,83.6,79.1,83.1,85.4,80.7,71.2,78.2,64.3,2018
+75,Madagascar,SSA,6,Least Developed,1,Primary,1,Rural,1,63.3,64.9,61.7,63.7,65.4,61.9,60.8,65.3,56.4,2018
+79,Mongolia,EAP,1,Less Developed,2,Primary,1,Urban,2,94.7,95.7,93.7,95,96,94,88.3,94.6,81.9,2018
+80,Mongolia,EAP,1,Less Developed,2,Primary,1,Rural,1,90.6,92,89.1,91,92.5,89.6,83,90.4,75.5,2018
+84,Nepal,SA,5,Least Developed,1,Primary,1,Urban,2,75.6,77.6,73.7,76.3,78.3,74.2,71.7,77,66.4,2019
+85,Nepal,SA,5,Least Developed,1,Primary,1,Rural,1,74.8,77.1,72.6,74.7,77.2,72.2,75.8,81.5,70.2,2019
+94,State of Palestine,MENA,4,Less Developed,2,Primary,1,Urban,2,97,98,95.9,97.9,98.8,97,92.5,96.5,88.6,2020
+95,State of Palestine,MENA,4,Less Developed,2,Primary,1,Rural,1,96.5,97.9,95.2,97.2,98.5,95.9,91.7,97,86.4,2020
+99,Pakistan (Punjab),SA,5,Less Developed,2,Primary,1,Urban,2,70.7,72.1,69.3,70.8,72.4,69.3,70.3,73.5,67,2017
+100,Pakistan (Punjab),SA,5,Less Developed,2,Primary,1,Rural,1,61.9,62.8,61,63.1,64.1,62.1,56.3,58.5,54.1,2017
+105,Samoa,EAP,1,Less Developed,2,Primary,1,Rural,1,89.3,91.4,87.2,87.9,90.4,85.3,93.5,96.8,90.1,2020
+109,Sao Tome and Principe,SSA,6,Least Developed,1,Primary,1,Urban,2,90.7,93,88.4,91.8,94.2,89.4,85.5,92,78.9,2019
+110,Sao Tome and Principe,SSA,6,Least Developed,1,Primary,1,Rural,1,83.3,86.8,79.9,83.6,87.6,79.7,82.5,89.6,75.4,2019
+114,Sierra Leone,SSA,6,Least Developed,1,Primary,1,Urban,2,91.6,92.9,90.3,92.2,93.6,90.8,89.3,92.3,86.3,2017
+115,Sierra Leone,SSA,6,Least Developed,1,Primary,1,Rural,1,75.9,77.2,74.5,75.5,77.1,73.9,77,79.7,74.4,2017
+119,Pakistan (Sindh),SA,5,Less Developed,2,Primary,1,Urban,2,48.3,50,46.5,48.8,50.7,46.8,46.2,50.2,42.2,2018
+120,Pakistan (Sindh),SA,5,Less Developed,2,Primary,1,Rural,1,25.2,26.7,23.8,25.9,27.5,24.3,21.2,24.7,17.7,2018
+124,Suriname,LAC,3,Less Developed,2,Primary,1,Urban,2,95.2,96.5,93.9,95.5,96.8,94.1,92.7,97.1,88.3,2018
+125,Suriname,LAC,3,Less Developed,2,Primary,1,Rural,1,92.4,94.2,90.6,92.5,94.4,90.6,92.1,96.9,87.3,2018
+134,Togo,SSA,6,Least Developed,1,Primary,1,Urban,2,97.1,98.3,96,97,98.3,95.7,97.5,99.9,95.1,2017
+135,Togo,SSA,6,Least Developed,1,Primary,1,Rural,1,90.4,91.8,89,90,91.6,88.4,92.2,95.2,89.2,2017
+140,Tonga,EAP,1,Less Developed,2,Primary,1,Rural,1,96.8,98.2,95.3,96.8,98.3,95.3,96.3,101.2,91.3,2019
+144,Tunisia,MENA,4,Less Developed,2,Primary,1,Urban,2,95.6,96.6,94.5,95.4,96.6,94.2,96.4,98.5,94.3,2018
+145,Tunisia,MENA,4,Less Developed,2,Primary,1,Rural,1,92,94,90.1,91.8,94.1,89.5,92.6,96.2,88.9,2018
+159,Zimbabwe,SSA,6,Less Developed,2,Primary,1,Urban,2,92.8,94.2,91.3,93,94.5,91.5,90.1,96.5,83.8,2019
+160,Zimbabwe,SSA,6,Less Developed,2,Primary,1,Rural,1,89.4,90.5,88.2,89.3,90.5,88.1,90.1,93.6,86.7,2019
+164,Bangladesh,SA,5,Least Developed,1,Lower Secondary,2,Urban,2,63.5,65.8,61.2,64.1,66.5,61.8,54.6,64.1,45.1,2019
+165,Bangladesh,SA,5,Least Developed,1,Lower Secondary,2,Rural,1,60.0,61.1,58.9,61.0,62.2,59.9,48.9,53.0,44.9,2019
+174,Central African Republic,SSA,6,Least Developed,1,Lower Secondary,2,Urban,2,26.3,29.6,22.9,27.1,31.1,23.1,24.0,30.6,17.5,2018
+175,Central African Republic,SSA,6,Least Developed,1,Lower Secondary,2,Rural,1,4.4,5.8,3.0,5.5,7.4,3.7,1.7,3.4,0.1,2018
+179,Chad,SSA,6,Least Developed,1,Lower Secondary,2,Urban,2,33.0,36.4,29.6,33.5,37.6,29.4,31.8,38.0,25.6,2019
+180,Chad,SSA,6,Least Developed,1,Lower Secondary,2,Rural,1,9.3,10.4,8.2,9.5,10.9,8.2,8.6,10.6,6.5,2019
+184,Democratic Republic of the Congo,SSA,6,Least Developed,1,Lower Secondary,2,Urban,2,39.8,43.9,35.8,43.1,47.6,38.7,21.2,29.4,12.9,2017
+185,Democratic Republic of the Congo,SSA,6,Least Developed,1,Lower Secondary,2,Rural,1,20.8,23.2,18.4,20.6,23.3,17.9,21.4,26.3,16.5,2017
+194,Ghana,SSA,6,Less Developed,2,Lower Secondary,2,Urban,2,53.1,56.3,49.9,56.1,59.7,52.6,39.9,47.1,32.7,2017
+195,Ghana,SSA,6,Less Developed,2,Lower Secondary,2,Rural,1,33.8,36.5,31.1,34.0,37.0,31.0,33.0,39.4,26.6,2017
+199,Guinea-Bissau,SSA,6,Least Developed,1,Lower Secondary,2,Urban,2,15.7,19.3,12.0,14.4,18.2,10.6,23.1,34.2,12.0,2018
+200,Guinea-Bissau,SSA,6,Least Developed,1,Lower Secondary,2,Rural,1,4.0,5.3,2.6,4.4,5.9,2.9,2.0,4.6,-0.6,2018
+205,Guyana,LAC,3,Less Developed,2,Lower Secondary,2,Rural,1,91.2,93.8,88.7,91.0,93.8,88.2,92.4,98.4,86.4,2020
+209,Iraq,MENA,4,Less Developed,2,Lower Secondary,2,Urban,2,60.6,62.7,58.6,64.1,66.4,61.8,49.4,54.0,44.8,2018
+210,Iraq,MENA,4,Less Developed,2,Lower Secondary,2,Rural,1,39.8,42.7,36.9,40.8,44.0,37.5,35.2,41.7,28.6,2018
+215,Kiribati,EAP,1,Least Developed,1,Lower Secondary,2,Rural,1,89.7,93.0,86.4,93.7,96.8,90.6,77.7,87.0,68.3,2018
+225,Kyrgyzstan,ECA,2,Less Developed,2,Lower Secondary,2,Rural,1,97.0,98.2,95.8,97.2,98.4,96.0,95.3,100.9,89.7,2018
+230,Lesotho,SSA,6,Least Developed,1,Lower Secondary,2,Rural,1,81.1,83.7,78.4,80.7,83.5,77.9,85.2,93.4,77.1,2018
+234,Madagascar,SSA,6,Least Developed,1,Lower Secondary,2,Urban,2,45.2,48.5,42.0,44.9,48.3,41.4,47.6,56.3,38.8,2018
+235,Madagascar,SSA,6,Least Developed,1,Lower Secondary,2,Rural,1,20.5,22.1,18.9,20.2,22.0,18.5,22.2,26.7,17.6,2018
+239,Mongolia,EAP,1,Less Developed,2,Lower Secondary,2,Urban,2,1.7,2.6,0.9,1.5,2.2,0.7,7.0,13.5,0.6,2018
+240,Mongolia,EAP,1,Less Developed,2,Lower Secondary,2,Rural,1,0.1,0.4,-0.1,0.2,0.4,-0.1,0.0,0.0,0.0,2018
+244,Nepal,SA,5,Least Developed,1,Lower Secondary,2,Urban,2,51.6,54.8,48.5,52.0,55.3,48.6,49.6,58.0,41.2,2019
+245,Nepal,SA,5,Least Developed,1,Lower Secondary,2,Rural,1,47.4,51.0,43.8,47.5,51.3,43.6,47.1,57.3,36.8,2019
+254,State of Palestine,MENA,4,Less Developed,2,Lower Secondary,2,Urban,2,91.8,93.2,90.5,93.0,94.3,91.7,84.6,89.2,80.0,2020
+255,State of Palestine,MENA,4,Less Developed,2,Lower Secondary,2,Rural,1,90.1,91.8,88.4,90.6,92.4,88.8,87.2,92.3,82.0,2020
+259,Pakistan (Punjab),SA,5,Less Developed,2,Lower Secondary,2,Urban,2,45.5,47.7,43.3,46.9,49.3,44.5,38.4,43.6,33.2,2017
+260,Pakistan (Punjab),SA,5,Less Developed,2,Lower Secondary,2,Rural,1,32.2,33.5,30.9,32.7,34.1,31.3,30.0,33.0,26.9,2017
+265,Samoa,EAP,1,Less Developed,2,Lower Secondary,2,Rural,1,9.1,12.8,5.4,9.1,13.3,4.9,9.2,16.9,1.4,2020
+269,Sao Tome and Principe,SSA,6,Least Developed,1,Lower Secondary,2,Urban,2,58.9,64.6,53.3,62.9,69.1,56.7,40.0,52.6,27.4,2019
+274,Sierra Leone,SSA,6,Least Developed,1,Lower Secondary,2,Urban,2,57.2,60.6,53.8,60.5,64.3,56.7,45.4,52.9,38.0,2017
+275,Sierra Leone,SSA,6,Least Developed,1,Lower Secondary,2,Rural,1,18.0,20.2,15.8,18.3,20.8,15.9,16.5,21.2,11.8,2017
+279,Pakistan (Sindh),SA,5,Less Developed,2,Lower Secondary,2,Urban,2,28.6,31.0,26.2,27.8,30.4,25.1,32.9,39.1,26.6,2018
+280,Pakistan (Sindh),SA,5,Less Developed,2,Lower Secondary,2,Rural,1,12.1,13.8,10.4,12.4,14.2,10.5,10.5,14.8,6.3,2018
+284,Suriname,LAC,3,Less Developed,2,Lower Secondary,2,Urban,2,65.9,69.9,62.0,66.8,71.0,62.5,60.6,71.7,49.5,2018
+285,Suriname,LAC,3,Less Developed,2,Lower Secondary,2,Rural,1,46.1,50.6,41.5,47.5,52.5,42.6,40.0,51.5,28.5,2018
+294,Togo,SSA,6,Least Developed,1,Lower Secondary,2,Urban,2,70.4,74.7,66.2,71.2,76.0,66.5,67.7,77.2,58.3,2017
+295,Togo,SSA,6,Least Developed,1,Lower Secondary,2,Rural,1,44.0,47.4,40.6,43.1,46.9,39.3,47.8,55.4,40.3,2017
+304,Tunisia,MENA,4,Less Developed,2,Lower Secondary,2,Urban,2,84.4,87.0,81.7,86.5,89.3,83.7,77.7,84.3,71.2,2018
+305,Tunisia,MENA,4,Less Developed,2,Lower Secondary,2,Rural,1,73.1,77.8,68.5,76.8,81.8,71.7,61.6,72.5,50.8,2018
+320,Zimbabwe,SSA,6,Less Developed,2,Lower Secondary,2,Rural,1,51.3,54.0,48.5,52.6,55.5,49.7,41.5,50.0,33.1,2019
+324,Bangladesh,SA,5,Least Developed,1,Upper secondary,3,Urban,2,55.6,57.7,53.5,56.1,58.3,54.0,46.5,55.5,37.5,2019
+325,Bangladesh,SA,5,Least Developed,1,Upper secondary,3,Rural,1,48.9,49.9,47.9,49.5,50.5,48.4,40.4,44.4,36.3,2019
+335,Central African Republic,SSA,6,Least Developed,1,Upper secondary,3,Rural,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2018
+339,Chad,SSA,6,Least Developed,1,Upper secondary,3,Urban,2,14.4,19.0,9.8,16.1,21.8,10.4,9.1,16.2,2.1,2019
+340,Chad,SSA,6,Least Developed,1,Upper secondary,3,Rural,1,0.7,1.3,0.1,0.8,1.6,0.1,0.3,1.0,-0.4,2019
+344,Democratic Republic of the Congo,SSA,6,Least Developed,1,Upper secondary,3,Urban,2,52.6,55.8,49.4,54.2,57.7,50.7,43.4,51.7,35.2,2017
+345,Democratic Republic of the Congo,SSA,6,Least Developed,1,Upper secondary,3,Rural,1,17.0,18.8,15.2,17.7,19.8,15.7,13.2,16.9,9.5,2017
+354,Ghana,SSA,6,Less Developed,2,Upper secondary,3,Urban,2,27.5,30.7,24.3,28.2,31.8,24.5,24.9,32.1,17.6,2017
+355,Ghana,SSA,6,Less Developed,2,Upper secondary,3,Rural,1,7.0,8.8,5.3,8.1,10.2,6.0,3.1,5.8,0.3,2017
+360,Guinea-Bissau,SSA,6,Least Developed,1,Upper secondary,3,Rural,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2018
+365,Guyana,LAC,3,Less Developed,2,Upper secondary,3,Rural,1,60.6,65.3,55.9,61.0,66.1,55.9,58.9,70.8,46.9,2020
+369,Iraq,MENA,4,Less Developed,2,Upper secondary,3,Urban,2,39.5,41.7,37.2,42.5,45.0,40.0,28.2,32.6,23.7,2018
+370,Iraq,MENA,4,Less Developed,2,Upper secondary,3,Rural,1,27.4,30.3,24.4,27.8,31.2,24.5,25.6,32.0,19.2,2018
+394,Madagascar,SSA,6,Least Developed,1,Upper secondary,3,Urban,2,24.8,28.5,21.0,26.1,30.2,22.0,14.0,22.8,5.2,2018
+395,Madagascar,SSA,6,Least Developed,1,Upper secondary,3,Rural,1,6.9,8.5,5.4,7.2,8.9,5.5,5.3,8.9,1.6,2018
+404,Nepal,SA,5,Least Developed,1,Upper secondary,3,Urban,2,51.4,54.0,48.8,52.8,55.6,50.1,39.5,47.0,31.9,2019
+405,Nepal,SA,5,Least Developed,1,Upper secondary,3,Rural,1,43.1,46.0,40.3,43.9,46.9,40.8,37.9,46.1,29.6,2019
+414,State of Palestine,MENA,4,Less Developed,2,Upper secondary,3,Urban,2,79.2,82.4,76.1,81.9,85.1,78.6,62.7,73.1,52.3,2020
+415,State of Palestine,MENA,4,Less Developed,2,Upper secondary,3,Rural,1,77.1,81.2,73.1,78.3,82.6,74.0,69.6,82.0,57.2,2020
+419,Pakistan (Punjab),SA,5,Less Developed,2,Upper secondary,3,Urban,2,36.8,39.3,34.3,37.4,40.2,34.6,33.9,39.8,27.9,2017
+420,Pakistan (Punjab),SA,5,Less Developed,2,Upper secondary,3,Rural,1,23.3,24.7,21.9,23.8,25.3,22.2,20.4,23.8,17.1,2017
+425,Samoa,EAP,1,Less Developed,2,Upper secondary,3,Rural,1,73.6,78.1,69.2,73.2,78.2,68.3,75.6,85.6,65.6,2020
+429,Sao Tome and Principe,SSA,6,Least Developed,1,Upper secondary,3,Urban,2,24.7,30.5,19.0,27.2,34.0,20.5,16.4,26.7,6.1,2019
+434,Sierra Leone,SSA,6,Least Developed,1,Upper secondary,3,Urban,2,37.0,40.9,33.0,37.8,42.2,33.5,32.9,42.5,23.4,2017
+435,Sierra Leone,SSA,6,Least Developed,1,Upper secondary,3,Rural,1,9.6,11.9,7.4,10.3,12.8,7.7,6.7,11.3,2.1,2017
+439,Pakistan (Sindh),SA,5,Less Developed,2,Upper secondary,3,Urban,2,21.6,24.2,19.0,21.8,24.6,19.0,20.3,26.6,14.1,2018
+440,Pakistan (Sindh),SA,5,Less Developed,2,Upper secondary,3,Rural,1,7.7,9.4,6.0,7.4,9.2,5.6,11.0,17.8,4.2,2018
+464,Tunisia,MENA,4,Less Developed,2,Upper secondary,3,Urban,2,66.2,70.0,62.4,68.2,72.3,64.0,58.9,67.5,50.3,2018
+465,Tunisia,MENA,4,Less Developed,2,Upper secondary,3,Rural,1,42.3,47.9,36.8,44.1,50.6,37.6,38.3,48.7,27.8,2018
