@@ -18,7 +18,7 @@ dt_tpe=subset(dt,select = -c(Children.without.functional.difficulties.Point.esti
 model_tpe=lm(Total.Point.estimate~.,data = dt_tpe)
 
 #require regression for cwithout
-dt_cthout=subset(dt,select = -c(Children.with.functional.difficulties.Point.estimate))
+dt_cthout=subset(dt,select = -c(Total.Point.estimate, Children.with.functional.difficulties.Point.estimate))
 model_cthout=lm(Children.without.functional.difficulties.Point.estimate~.,data=dt_cthout)
 
 #create prediction of ANAR
@@ -79,9 +79,9 @@ future=function(z,y,opt,col){
       #set total estimate
       d0=data.frame(reg=re,develop=dv,level=indi,X=house,Time.period=t,interval = "confidence")
       tpe=as.double(predict(model_tpe,d0))
-      
+
       #set cthout
-      d1=data.frame(reg=re,develop=dv,level=indi,X=house,Total.Point.estimate=tpe,Time.period=t,interval = "confidence")
+      d1=data.frame(reg=re,develop=dv,level=indi,X=house,Time.period=t,interval = "confidence")
       cthout=as.double(predict(model_cthout,d1))
       
       newdata=data.frame(reg=re,
@@ -158,18 +158,20 @@ for(i in 1:nrow(filter(dt,dt[,2] == 1))) {
   dv=dt[i,]$develop
   indi=dt[i,]$level
   house=dt[i,]$X
+  tpe=dt[i,]$Total.Point.estimate
+  cthout=dt[i,]$Children.without.functional.difficulties.Point.estimate
   
   #set year to predict
   t=2020
   
-  #set total estimate
-  d0=data.frame(reg=re,develop=dv,level=indi,X=house,Time.period=t,interval = "confidence")
-  tpe=as.double(predict(model_tpe,d0))
-  
-  #set cthout
-  d1=data.frame(reg=re,develop=dv,level=indi,X=house,Total.Point.estimate=tpe,Time.period=t,interval = "confidence")
-  cthout=as.double(predict(model_cthout,d1))
-  
+  # #set total estimate
+  # d0=data.frame(reg=re,develop=dv,level=indi,X=house,Time.period=t,interval = "confidence")
+  # tpe=as.double(predict(model_tpe,d0))
+  # 
+  # #set cthout
+  # d1=data.frame(reg=re,develop=dv,level=indi,X=house,Total.Point.estimate=tpe,Time.period=t,interval = "confidence")
+  # cthout=as.double(predict(model_cthout,d1))
+  # 
   newdata=data.frame(reg=re,
                      develop=dv,
                      level=indi,

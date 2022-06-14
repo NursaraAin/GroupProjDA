@@ -45,14 +45,15 @@ for(j in 1:year){
     dv=dt[i,]$develop
     indi=dt[i,]$level
     house=dt[i,]$X
-    
+    tpe=dt[i,]$Total.Point.estimate
+    cthout=dt[i,]$Children.without.functional.difficulties.Point.estimate
     #set year to predict
     t=yearPred[nrow(yearPred),]$year+1
     
     #set total estimate
     d0=data.frame(reg=re,develop=dv,level=indi,X=house,Time.period=t,interval = "confidence")
     tpe=as.double(predict(model_tpe,d0))
-    
+
     #set cthout
     d1=data.frame(reg=re,develop=dv,level=indi,X=house,Time.period=t,interval = "confidence")
     cthout=as.double(predict(model_cthout,d1))
