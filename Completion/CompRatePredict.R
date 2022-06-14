@@ -50,7 +50,7 @@ for(j in 1:year){
     tpe=as.double(predict(model_tpe,d0))
     
     #set cthout
-    d1=data.frame(reg=re,develop=dv,cat=house,Time.period=t,interval = "confidence")
+    d1=data.frame(reg=re,develop=dv,cat=house,Total.Point.estimate=tpe,Time.period=t,interval = "confidence")
     cthout=as.double(predict(model_cthout,d1))
     
     newdata=data.frame(reg=re,

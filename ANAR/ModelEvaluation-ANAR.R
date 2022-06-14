@@ -42,7 +42,7 @@ summary(model.lr)
 indexes = createDataPartition(dt$Children.with.functional.difficulties.Point.estimate, 
                               p = .85, list = F)
 
-set.seed(4)
+set.seed(2)
 train.knn = dt[indexes, ]
 test.knn = dt[-indexes, ]
 
@@ -66,7 +66,7 @@ mae.knn = caret::MAE(test_y.knn, pred_y.knn)
 rmse.knn = caret::RMSE(test_y.knn, pred_y.knn)
 
 cat("MSE: ", mse.knn, "MAE: ", mae.knn, " RMSE: ", rmse.knn)
-#MSE:  80.29747 MAE:  7.76875  RMSE:  8.960886
+#:  43.53883 MAE:  4.03375  RMSE:  6.598396
 
 
 #---------
@@ -80,7 +80,9 @@ str(dt.lasso)
 
 y.lasso <- anar$Children.without.functional.difficulties.Point.estimate
 
-x.lasso <- data.matrix(anar[, c('reg', 'develop', 'level','X','Time.period')])
+x.lasso <- data.matrix(anar[, c('reg', 'develop', 'level','X',
+                                'Total.Point.estimate','Children.without.functional.difficulties.Point.estimate',
+                                'Time.period')])
 
 
 #perform k-fold cross-validation to find optimal lambda value
@@ -106,7 +108,7 @@ sse <- sum((y.lasso_predicted - y.lasso)^2)
 #find R-Squared
 rsq <- 1 - sse/sst
 rsq
-#0.4557332
+# 0.9990716
 hey=as.numeric(y.lasso_predicted)
 preds <- data.frame(cbind(actuals=dt$Children.with.functional.difficulties.Point.estimate, predicteds=hey))
 
@@ -114,7 +116,7 @@ mse.lasso = mean((preds$actuals - preds$predicteds)^2)
 mae.lasso = MAE(preds$actuals, preds$predicteds)
 rmse.lasso = RMSE(preds$actuals, preds$predicteds)
 cat("MSE: ", mse.lasso, "MAE: ", mae.lasso, " RMSE: ", rmse.lasso)
-#MSE:  433.1065 MAE:  16.10216  RMSE:  20.81121
+#MSE:  49.02464 MAE:  5.32957  RMSE:  7.00176
 
 #------------
 #COMPARISON
@@ -127,7 +129,7 @@ plot(x, actuals_preds$actuals, col = "red", type = "l", lwd=2,
 #linear regression
 lines(x, actuals_preds$predicteds, col = "blue", lwd=2)
 #knn
-lines(x.knn, pred_y, col = "violet", lwd=2)
+lines(x.knn, pred_y.knn, col = "violet", lwd=2)
 #lasso
 lines(x.lasso, preds$predicteds, col = "green", lwd=2)
 legend("bottomleft",  legend = c("original", "predicted-LinearRegression", "predicted-KNN", "predicted-LASSO"), 

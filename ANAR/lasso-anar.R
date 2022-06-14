@@ -9,7 +9,9 @@ str(dt)
 
 y <- anar$Children.without.functional.difficulties.Point.estimate
 
-x <- data.matrix(anar[, c('reg', 'develop', 'level','X','Time.period')])
+x <- data.matrix(anar[, c('reg', 'develop', 'level','X',
+                          'Total.Point.estimate','Children.without.functional.difficulties.Point.estimate',
+                          'Time.period')])
 
 
 #perform k-fold cross-validation to find optimal lambda value
@@ -43,7 +45,7 @@ mse = mean((preds$actuals - preds$predicteds)^2)
 mae = MAE(preds$actuals, preds$predicteds)
 rmse = RMSE(preds$actuals, preds$predicteds)
 cat("MSE: ", mse, "MAE: ", mae, " RMSE: ", rmse)
-#MSE:  433.1065 MAE:  16.10216  RMSE:  20.81121
+#MSE:  49.02464 MAE:  5.32957  RMSE:  7.00176
 
 x = 1:length(preds$actuals)
 plot(x, preds$actuals, col = "red", type = "l", lwd=2,
@@ -53,6 +55,6 @@ legend("topright",  legend = c("original", "predicted"),
        fill = c("red", "blue"), col = 2:3,  adj = c(0, 0.6))
 grid()
 cor(preds)
-#               actuals predicteds
-# actuals    1.0000000  0.7494654
-# predicteds 0.7494654  1.0000000
+#              actuals predicteds
+# actuals    1.0000000  0.9837811
+# predicteds 0.9837811  1.0000000

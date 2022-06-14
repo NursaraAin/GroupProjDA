@@ -9,10 +9,6 @@ dt=subset(anar,select = c(reg,develop,level,X,
                           Total.Point.estimate,Children.without.functional.difficulties.Point.estimate,
                           Children.with.functional.difficulties.Point.estimate,Time.period))
 set.seed(4)
-split1<- sample(c(rep(0, 0.7 * nrow(dt)), rep(1, 0.3 * nrow(dt))))
-table(split1)
-train=dt[split1==0,]
-test=dt[split1==1,]
 
 model=lm(Children.with.functional.difficulties.Point.estimate~.,data = dt)
 
@@ -82,9 +78,9 @@ for(j in 1:year){
 }
 
 
-plot(yearPred$year, yearPred$anarDisabled, col="red",type = "b", lty = 2, frame=FALSE,
+plot(yearPred$year, yearPred$anarDisabled, col="red",type = "b", lty = 2, frame=FALSE, lwd=2,
      main = "Percentage of children with disabilities attending to school", xlab="Year",ylab="Percentage of children with disabilities")
-lines(yearPred[1:4,]$year, yearPred[1:4,]$anarDisabled, col="blue",type = "b", lty = 1)
+lines(yearPred[1:4,]$year, yearPred[1:4,]$anarDisabled, col="blue",type = "b", lty = 1, lwd=2)
 legend("bottomright", legend=c("Predicted", "Actual"),
        col=c("red", "blue"), lty = 2:1, cex=0.8)
 
