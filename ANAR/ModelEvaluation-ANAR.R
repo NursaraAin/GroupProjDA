@@ -120,20 +120,25 @@ cat("MSE: ", mse.lasso, "MAE: ", mae.lasso, " RMSE: ", rmse.lasso)
 
 #------------
 #COMPARISON
-
+par(mfrow=c(3,1)) 
 x = 1:length(actuals_preds$actuals)
 x.lasso = 1:length(preds$actuals)
 x.knn = 1:length(test_y.knn)
 plot(x, actuals_preds$actuals, col = "red", type = "l", lwd=2,
-     main = "attendance rate prediction")
-#linear regression
+     main = "anar lg data prediction")
 lines(x, actuals_preds$predicteds, col = "blue", lwd=2)
-#knn
-lines(x.knn, pred_y.knn, col = "violet", lwd=2)
-#lasso
-lines(x.lasso, preds$predicteds, col = "green", lwd=2)
-legend("bottomleft",  legend = c("original", "predicted-LinearRegression", "predicted-KNN", "predicted-LASSO"), 
-       fill = c("red", "blue", "violet", "green"), col = 2:2,  adj = c(0, 0.6))
 grid()
-
-
+legend("bottomleft",  legend = c("original", "predicted"), 
+       fill = c("red", "blue"), col = 2:3,  adj = c(0, 0.6))
+plot(x.knn, test_y.knn, col = "red", type = "l", lwd=2,
+     main = "anar knn data prediction")
+lines(x.knn, pred_y.knn, col = "blue", lwd=2)
+grid()
+legend("bottomleft",  legend = c("original", "predicted"), 
+       fill = c("red", "blue"), col = 2:3,  adj = c(0, 0.6))
+plot(x.lasso, preds$actuals, col = "red", type = "l", lwd=2,
+     main = "anar lasso data prediction")
+lines(x.lasso, preds$predicteds, col = "blue", lwd=2)
+grid()
+legend("bottomleft",  legend = c("original", "predicted"), 
+       fill = c("red", "blue"), col = 2:3)

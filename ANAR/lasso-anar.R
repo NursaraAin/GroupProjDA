@@ -49,7 +49,7 @@ cat("MSE: ", mse, "MAE: ", mae, " RMSE: ", rmse)
 
 x = 1:length(preds$actuals)
 plot(x, preds$actuals, col = "red", type = "l", lwd=2,
-     main = "anar lg data prediction")
+     main = "anar lasso data prediction")
 lines(x, preds$predicteds, col = "blue", lwd=2)
 legend("topright",  legend = c("original", "predicted"), 
        fill = c("red", "blue"), col = 2:3,  adj = c(0, 0.6))

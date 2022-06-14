@@ -19,24 +19,17 @@ test=dt[split1==1,]
 trainControl <- trainControl(method = "cv", number = 10)
 metric <- "RMSE"
 
-
-fit.nb <- train(Children.with.functional.difficulties.Point.estimate~., data = train, method = "nb", metric = metric, trControl = trainControl)
-print(fit.nb)
-
 fit.lm <- train(Children.with.functional.difficulties.Point.estimate~., data = train, method = "lm", metric = metric, trControl = trainControl)
 print(fit.lm)
 
 fit.knn <- train(Children.with.functional.difficulties.Point.estimate~., data = train, method = "knn", metric = metric, trControl = trainControl)
 print(fit.knn)
 
-fit.cart <- train(Children.with.functional.difficulties.Point.estimate~., data = train, method = "rpart", metric = metric, trControl = trainControl)
-print(fit.cart)
-
 fit.glmnet <- train(Children.with.functional.difficulties.Point.estimate~., data = train, method = "glmnet", metric = metric, trControl = trainControl)
 print(fit.glmnet)
 
 #compare
-results <- resamples(list(NB = fit.nb, LR = fit.lm, KNN = fit.knn, CART = fit.cart, GLMNET = fit.glmnet))
+results <- resamples(list(LR = fit.lm, KNN = fit.knn, GLMNET = fit.glmnet))
 summary(results)
 dotplot(results)
 
@@ -49,8 +42,12 @@ validation <- dt[-validationIndex,]
 dt <- dt[validationIndex,]
 
 #predictions
-predictions <- predict(fit.lm, validation)
-conf_m <- confusionMatrix(predictions, validation$Children.with.functional.difficulties.Point.estimate)
-print(conf_m)
-pred_table <- table(predictions, validation$Children.with.functional.difficulties.Point.estimate)
-print(pred_table)
+predictions <- as.numeric(predict(fit.lm, validation))
+cor(predictions, validation$Children.with.functional.difficulties.Point.estimate)
+#[1] 0.9979316
+predictions <- as.numeric(predict(fit.knn, validation))
+cor(predictions, validation$Children.with.functional.difficulties.Point.estimate)
+#[1] 0.9907939
+predictions <- as.numeric(predict(fit.glmnet, validation))
+cor(predictions, validation$Children.with.functional.difficulties.Point.estimate)
+#[1] 0.9891218
