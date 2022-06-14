@@ -183,46 +183,46 @@ for(i in 1:nrow(filter(dt,dt[,2] == 1))) {
 meanPred=pred/nrow(filter(dt,dt[,2] == 1))
 
 yearPred_D1[4,2]=meanPred
-y=5
+
 #D3 has no values, predict for all
-
-for(j in 1:(nrow(yearPred_D3)+y)){
-  pred=0
-  for(i in 1:nrow(dt)) {
-    #predict for each row
-    re=dt[i,]$reg
-    dv=3
-    indi=dt[i,]$level
-    house=dt[i,]$X
-    
-    #set year to predict
-    t=2016+j
-    
-    #set total estimate
-    d0=data.frame(reg=re,develop=dv,level=indi,X=house,Time.period=t,interval = "confidence")
-    tpe=as.double(predict(model_tpe,d0))
-    
-    #set cthout
-    d1=data.frame(reg=re,develop=dv,level=indi,Total.Point.estimate=tpe,X=house,Time.period=t,interval = "confidence")
-    cthout=as.double(predict(model_cthout,d1))
-    
-    newdata=data.frame(reg=re,
-                       develop=dv,
-                       level=indi,
-                       X=house,
-                       Total.Point.estimate=tpe,
-                       Children.without.functional.difficulties.Point.estimate=cthout,
-                       Time.period = t, interval = "confidence")
-    
-    pred=pred+as.double(predict(model,newdata))
-  }
-  meanPred=pred/nrow(dt)
-
-  if(j<=4)
-    yearPred_D3[j,2]=meanPred
-  else
-    yearPred_D3[j,]=data.frame(year=t,disabled=meanPred)
-}
+# no use -_- y=5
+# for(j in 1:(nrow(yearPred_D3)+y)){
+#   pred=0
+#   for(i in 1:nrow(dt)) {
+#     #predict for each row
+#     re=dt[i,]$reg
+#     dv=3
+#     indi=dt[i,]$level
+#     house=dt[i,]$X
+#     
+#     #set year to predict
+#     t=2016+j
+#     
+#     #set total estimate
+#     d0=data.frame(reg=re,develop=dv,level=indi,X=house,Time.period=t,interval = "confidence")
+#     tpe=as.double(predict(model_tpe,d0))
+#     
+#     #set cthout
+#     d1=data.frame(reg=re,develop=dv,level=indi,Total.Point.estimate=tpe,X=house,Time.period=t,interval = "confidence")
+#     cthout=as.double(predict(model_cthout,d1))
+#     
+#     newdata=data.frame(reg=re,
+#                        develop=dv,
+#                        level=indi,
+#                        X=house,
+#                        Total.Point.estimate=tpe,
+#                        Children.without.functional.difficulties.Point.estimate=cthout,
+#                        Time.period = t, interval = "confidence")
+#     
+#     pred=pred+as.double(predict(model,newdata))
+#   }
+#   meanPred=pred/nrow(dt)
+# 
+#   if(j<=4)
+#     yearPred_D3[j,2]=meanPred
+#   else
+#     yearPred_D3[j,]=data.frame(year=t,disabled=meanPred)
+# }
 
 yearPred_D1<-data.frame(future(yearPred_D1,5,1,2))
 yearPred_D2<-data.frame(future(yearPred_D2,5,2,2))
